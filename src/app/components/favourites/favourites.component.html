@@ -1,0 +1,4 @@
+<div class="card" *ngFor="let teacher of teachers" (click)="goTeacher(teacher)">
+  <img class="photo" src="{{teacher.photo}}">
+  <p class="name">{{teacher.name}}</p>
+</div>

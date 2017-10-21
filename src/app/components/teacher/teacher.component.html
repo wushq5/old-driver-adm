@@ -1,0 +1,28 @@
+<div class="teacher">
+  <img class="photo" src="{{teacher.photo}}">
+  <div class="info">
+    <h1>{{teacher.name}}</h1>
+    <p class="desc">{{teacher.desc}}</p>
+    <div class="other">
+      <div class="item">
+        <p>Birthday: {{getDate(teacher.birthday)}}</p>
+        <p>B-W-H: {{teacher.bwh}}</p>
+      </div>
+      <div class="item">
+        <p>Height: {{teacher.height}}cm</p>
+        <p>Weight: {{teacher.weight ? teacher.weight: '- '}}kg</p>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="primary">Upload Homework</button>
+    </div>
+  </div>
+</div>
+<div class="homeworks">
+  <div class="card" *ngFor="let homework of homeworks">
+    <img class="cover" src="{{homework.cover}}">
+    <p class="id">{{homework.id}}</p>
+    <p class="name">{{homework.name}}</p>
+  </div>
+</div>

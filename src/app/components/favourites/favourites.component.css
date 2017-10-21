@@ -1,0 +1,18 @@
+.card {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+}
+
+.card .photo {
+  width: 200px;
+  height: 250px;
+}
+
+.card .name {
+  text-align: center;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+}
