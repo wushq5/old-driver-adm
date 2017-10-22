@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput placeholder="Teacher Name" required [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Description" type="textarea" [(ngModel)]="desc"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Birthday" required [(ngModel)]="birthday">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Height(cm)" [(ngModel)]="height">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Weight(kg)" [(ngModel)]="weight">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="BWH" [(ngModel)]="bwh">
+  </mat-form-field>
+  <div class="pic-select">
+    <input type="file" id="photo" class="pic-input" (change)="onChange()" />
+    <img class="img-preview" id="imgPre" src="" width="200px" height="200px" />
+  </div>
+  <button mat-raised-button color="primary" (click)="update()">Update</button>
+</div>

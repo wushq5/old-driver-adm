@@ -12,13 +12,16 @@ import { LoginComponent } from './components/login/login.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { UploadTeacherComponent } from './components/uploadTeacher/uploadTeacher.component';
-
+import { UploadHomeworkComponent } from './components/uploadHomework/uploadHomework.component';
+import { UpdateTeacherComponent } from './components/updateTeacher/updateTeacher.component';
+ 
 import { CgiService } from './services/cgi.service';
 import { SessionStorageService } from './services/session-storage.service';
 import { LocationService } from './services/location.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { MyHttpInterceptor } from './services/myHttpInterceptor';
 import { CacheService } from './services/cache.service';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { CacheService } from './services/cache.service';
     FavouritesComponent,
     TeacherComponent,
     LoginComponent,
-    UploadTeacherComponent
+    UploadTeacherComponent,
+    UpdateTeacherComponent,
+    UploadHomeworkComponent
   ],
   imports: [
     HttpClientModule,
@@ -46,7 +51,8 @@ import { CacheService } from './services/cache.service';
       useClass: MyHttpInterceptor,
       multi: true,
     },
-    CacheService
+    CacheService,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,17 +9,27 @@ import { Homework } from '../models/homework';
 @Injectable()
 export class CgiService {
 
-  constructor(private http: HttpClient) { }
+  private prefix: string;
+
+  constructor(private http: HttpClient) { 
+
+    let host = window.location.host;
+    if (/^localhost/.test(host)) {
+      this.prefix = 'http://localhost:3000';
+    } else {
+      this.prefix = 'https://rcrab.top';
+    }
+  }
 
   getTeachers(): Promise<Teacher[]> {
-    return this.http.get('http://localhost:3000/teachers')
+    return this.http.get(`${this.prefix}/teachers`)
               .toPromise()
               .then(res => res as Teacher[])
               .catch(this.handleError);
   }
 
   getHomeworkByTeacherId(urlParams): Promise<Homework[]> {
-    return this.http.get(`http://localhost:3000/teachers/${urlParams.teacherId}/homeworks`)
+    return this.http.get(`${this.prefix}/teachers/${urlParams.teacherId}/homeworks`)
               .toPromise()
               .then(res => res as Homework[])
               .catch(this.handleError);
@@ -30,14 +40,28 @@ export class CgiService {
       name: data.username,
       password: data.password
     }
-    return this.http.post(`http://localhost:3000/user/token`, body)
+    return this.http.post(`${this.prefix}/user/token`, body)
               .toPromise()
               .then(res => res)
               .catch(this.handleError);
   }
 
   uploadTeacher(data): Promise<any> {
-    return this.http.post(`http://localhost:3000/teachers`, data)
+    return this.http.post(`${this.prefix}/teachers`, data)
+              .toPromise()
+              .then(res => res)
+              .catch(this.handleError);
+  }
+
+  uploadHomework(data): Promise<any> {
+    return this.http.post(`${this.prefix}/teachers/homeworks`, data)
+              .toPromise()
+              .then(res => res)
+              .catch(this.handleError);
+  }
+
+  updateTeacher(urlParams, data): Promise<any> {
+    return this.http.put(`${this.prefix}/teachers/${urlParams.teacherId}`, data)
               .toPromise()
               .then(res => res)
               .catch(this.handleError);

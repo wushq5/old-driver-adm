@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.container > * {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.pic-select {
+  padding-bottom: 10px;
+  position: relative;
+  height: 200px;
+}
+
+.pic-input {
+  z-index: 2;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-filter: opacity(0);
+  width: 200px;
+  height: 200px;
+}
+
+.img-preview {
+  border: none;
+  z-index: 1;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url(../../assets/upload.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

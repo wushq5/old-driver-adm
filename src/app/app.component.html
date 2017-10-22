@@ -1,13 +1,19 @@
-<mat-toolbar color="primary">
-  <span (click)="sidenav.toggle()">河蟹号操作台</span>
+<mat-toolbar color="primary" class="toolbar">
+  <span (click)="sidenav.toggle()">河蟹号驾驶舱</span>
   <span class="space"></span>
-  <span>Right Aligned Text</span>
+  <mat-icon class="toolbar-icon">info outline</mat-icon>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
     <mat-list>
-      <mat-list-item (click)="goHome()"> Home </mat-list-item>
-      <mat-list-item (click)="goUploadTeacher()"> Upload Teacher </mat-list-item>
+      <mat-list-item (click)="goHome()"> 
+        <mat-icon mat-list-icon>home</mat-icon>
+        <p>Home</p>
+      </mat-list-item>
+      <mat-list-item (click)="goUploadTeacher()">
+        <mat-icon mat-list-icon>add</mat-icon>
+        <p>Upload Teacher</p>
+      </mat-list-item>
     </mat-list>
   </mat-sidenav>
 

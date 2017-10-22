@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { UploadTeacherComponent } from './components/uploadTeacher/uploadTeacher.component';
+import { UpdateTeacherComponent } from './components/updateTeacher/updateTeacher.component';
+import { UploadHomeworkComponent } from './components/uploadHomework/uploadHomework.component';
 
 import { AuthGuard } from './services/auth-guard.service';
 
@@ -24,6 +26,16 @@ const appRoutes: Routes = [
   {
     path: 'uploadTeacher', 
     component: UploadTeacherComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'uploadHomework', 
+    component: UploadHomeworkComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'updateTeacher', 
+    component: UpdateTeacherComponent,
     canActivate: [AuthGuard]
   },
   { path: '**', component: LoginComponent }

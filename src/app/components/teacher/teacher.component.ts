@@ -33,4 +33,12 @@ export class TeacherComponent implements OnInit {
     let date = new Date(dateStr);
     return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
   }
+
+  goUploadHomework() {
+    this.location.travel(['/uploadHomework'], this.teacher);
+  }
+
+  goUpdateTeacher() {
+    this.location.travel(['/updateTeacher'], this.teacher);
+  }
 }

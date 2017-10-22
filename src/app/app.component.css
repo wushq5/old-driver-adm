@@ -1,4 +1,3 @@
-
 .header {
   position: relative;
 }
@@ -8,10 +7,23 @@
 }
 
 .sidenav-container {
+  position: absolute;
   width: 100%;
-  height: 100%;
+  top: 64px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .sidenav {
-  width: 200px;
+  width: 220px;
+  border: 1px solid #aaa;
+}
+
+.toolbar {
+
+  /*width: 100%;*/
+}
+
+.toolbar-icon {
+  padding: 0 14px;
 }
