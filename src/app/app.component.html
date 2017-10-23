@@ -1,7 +1,9 @@
 <mat-toolbar color="primary" class="toolbar">
   <span (click)="sidenav.toggle()">河蟹号驾驶舱</span>
   <span class="space"></span>
-  <mat-icon class="toolbar-icon">info outline</mat-icon>
+  <div class="toolbar-icon">
+    <mat-icon>info outline</mat-icon>
+  </div>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">

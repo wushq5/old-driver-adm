@@ -11,6 +11,7 @@
         "assets",
         "favicon.ico"
       ],
+      "deployUrl": "https://rcrab.top/s/adm/",
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
